@@ -15,7 +15,7 @@ async function downloadImage(url, filename) {
 }
 
 const replicate = new Replicate({
-  auth: "my_token",
+  auth: "r8_63hkmN8DQgr5zbopP5cKsFVjU6VVpXi3Va6sX",
 });
 
 const prompt = `
@@ -33,7 +33,7 @@ replicate
         width: 768,
         height: 1024,
         num_inference_steps: 50,
-        scheduler: "DDIM",
+        scheduler: "DPMSolverMultistep",//"DDIM","DPMSolverMultistep","HeunDiscrete","KarrasDPM","K_EULER_ANCESTRAL","K_EULER","PNDM"
         guidance_scale: 7.5,
         refine: "expert_ensemble_refiner",
         high_noise_frac: 0.8,
@@ -41,5 +41,5 @@ replicate
     }
   )
   .then(async (output) => {
-    await downloadImage(output, "image.png");
+    await downloadImage(output, Math.random() + ".png");
   });
