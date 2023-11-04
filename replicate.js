@@ -15,7 +15,7 @@ async function downloadImage(url, filename) {
 }
 
 const replicate = new Replicate({
-  auth: "r8_63hkmN8DQgr5zbopP5cKsFVjU6VVpXi3Va6sX",
+  auth: "my api key",
 });
 
 const prompt = `
